@@ -8,15 +8,27 @@ import { Component } from '@angular/core';
 })
 export class OperasBasComponent {
 
-  num1: string="";
-  num2: string="";
-  res: string="";
+  num1: string = "";
+  num2: string = "";
+  res: string = "";
+  operacion: string = "";
 
-  sumar():void{
-    this.res=(parseInt(this.num1)+parseInt(this.num2)).toString();
+  calcular(): void {
+    let n1 = parseInt(this.num1);
+    let n2 = parseInt(this.num2);
+
+    if (this.operacion == "suma") {
+      this.res = (n1 + n2).toString();
+    }
+    else if (this.operacion == "resta") {
+      this.res = (n1 - n2).toString();
+    }
+    else if (this.operacion == "multi") {
+      this.res = (n1 * n2).toString();
+    }
+    else if (this.operacion == "div") {
+      this.res = (n1 / n2).toString();
+    }
   }
 
-
-
 }
-

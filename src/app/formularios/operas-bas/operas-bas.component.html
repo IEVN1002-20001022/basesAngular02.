@@ -23,13 +23,17 @@
         />
       </div>
 
+      <!-- Radios para elegir la operación -->
+      <div class="form-group pt-3">
+        <label>Operación:</label><br>
+        <input type="radio" name="op" [(ngModel)]="operacion" value="suma"> Suma
+        <input type="radio" name="op" [(ngModel)]="operacion" value="resta" class="ms-3"> Resta
+        <input type="radio" name="op" [(ngModel)]="operacion" value="multi" class="ms-3"> Multiplicacion
+        <input type="radio" name="op" [(ngModel)]="operacion" value="div" class="ms-3"> Division
+      </div>
+
       <div class="form-group">
-        
-        <button class="btn btn-primary mt-3" (click)="sumar()">Sumar</button>
-        <button class="btn btn-primary mt-3" (click)="resta()">Restar</button>
-        <button class="btn btn-primary mt-3" (click)="multi()">Multiplicar</button>
-        <button class="btn btn-primary mt-3" (click)="div()">Dividir</button>
-        
+        <button type="button" class="btn btn-primary mt-3" (click)="calcular()">Calcular</button>
       </div>
     </div>
   </div>

@@ -10,13 +10,14 @@ import { HeroesFilterPipe } from './heroes/heroes-filter.pipe';
 import { OperasBasComponent } from './formularios/operas-bas/operas-bas.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesListComponent,
     HeroesListPipe,
     HeroesFilterPipe,
-    OperasBasComponent
+    OperasBasComponent,
   ],
   imports: [
     BrowserModule,
