@@ -7,6 +7,7 @@ import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component'
 import { FormsModule } from '@angular/forms';
 import { HeroesListPipe } from './heroes/heroes-list.pipe';
 import { HeroesFilterPipe } from './heroes/heroes-filter.pipe';
+import { OperasBasComponent } from './formularios/operas-bas/operas-bas.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HeroesFilterPipe } from './heroes/heroes-filter.pipe';
     AppComponent,
     HeroesListComponent,
     HeroesListPipe,
-    HeroesFilterPipe
+    HeroesFilterPipe,
+    OperasBasComponent
   ],
   imports: [
     BrowserModule,
