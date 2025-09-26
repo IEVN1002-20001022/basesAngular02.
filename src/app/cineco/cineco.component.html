@@ -1,0 +1,23 @@
+<div class="body">
+  <div>
+    <h2>Comprar boletos CINECO</h2>
+
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="nombre">
+
+    <label>Cantidad de personas:</label>
+    <input type="number" [(ngModel)]="personas" min="1">
+
+    <label>Cantidad de boletos:</label>
+    <input type="number" [(ngModel)]="numBoletos" min="1">
+
+    <label>
+      <input type="checkbox" [(ngModel)]="tarjetaCINECO">
+      Tengo tarjeta CINECO
+    </label>
+
+    <button (click)="calcularBoletos()">Calcular Precio</button>
+
+    <pre>{{ resultado }}</pre>
+  </div>
+</div>

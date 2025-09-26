@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
@@ -8,8 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HeroesListPipe } from './heroes/heroes-list.pipe';
 import { HeroesFilterPipe } from './heroes/heroes-filter.pipe';
 import { OperasBasComponent } from './formularios/operas-bas/operas-bas.component';
-
-
+import { CinecoComponent } from './cineco/cineco.component'; 
 
 @NgModule({
   declarations: [
@@ -18,11 +16,13 @@ import { OperasBasComponent } from './formularios/operas-bas/operas-bas.componen
     HeroesListPipe,
     HeroesFilterPipe,
     OperasBasComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CinecoComponent 
   ],
   providers: [],
   bootstrap: [AppComponent]
