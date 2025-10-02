@@ -1,0 +1,156 @@
+<div class="container">
+  <h2>Calculadora de Resistencias por Código de Colores</h2>
+
+  <div class="tablas-container">
+    
+  
+    <div class="tabla">
+      <h3>1ra. Banda</h3>
+      <table class="tabla-colores">
+        <tr>
+          <th>Seleccionar</th>
+          <th>Color</th>
+          <th>Valor</th>
+        </tr>
+        <tr *ngFor="let color of coloresBandas">
+          <td>
+            <input type="radio" 
+                   name="banda1" 
+                   [value]="color.valor" 
+                   [(ngModel)]="banda1">
+          </td>
+          <td>
+            <div class="color-box" [style.background-color]="color.color"></div>
+          </td>
+          <td>{{color.valor}}</td>
+        </tr>
+      </table>
+    </div>
+
+   
+    <div class="tabla">
+      <h3>2da. Banda</h3>
+      <table class="tabla-colores">
+        <tr>
+          <th>Seleccionar</th>
+          <th>Color</th>
+          <th>Valor</th>
+        </tr>
+        <tr *ngFor="let color of coloresBandas">
+          <td>
+            <input type="radio" 
+                   name="banda2" 
+                   [value]="color.valor" 
+                   [(ngModel)]="banda2">
+          </td>
+          <td>
+            <div class="color-box" [style.background-color]="color.color"></div>
+          </td>
+          <td>{{color.valor}}</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="tabla">
+      <h3>3ra. Banda Multiplicador</h3>
+      <table class="tabla-colores">
+        <tr>
+          <th>Seleccionar</th>
+          <th>Color</th>
+          <th>Valor</th>
+        </tr>
+        <tr *ngFor="let opcion of coloresMultiplicador">
+          <td>
+            <input type="radio" 
+                   name="multiplicador" 
+                   [value]="opcion.valor" 
+                   [(ngModel)]="multiplicador">
+          </td>
+          <td>
+            <div class="color-box" [style.background-color]="opcion.color"></div>
+          </td>
+          <td>{{opcion.texto}}</td>
+        </tr>
+      </table>
+    </div>
+
+    
+    <div class="tabla">
+      <h3>Tolerancia</h3>
+      <table class="tabla-colores">
+        <tr>
+          <th>Seleccionar</th>
+          <th>Color</th>
+          <th>Valor</th>
+        </tr>
+        <tr *ngFor="let opcion of coloresTolerancia">
+          <td>
+            <input type="radio" 
+                   name="tolerancia" 
+                   [value]="opcion.valor" 
+                   [(ngModel)]="tolerancia">
+          </td>
+          <td>
+            <div class="color-box" [style.background-color]="opcion.color"></div>
+          </td>
+          <td>{{opcion.texto}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="boton-container">
+    <button (click)="calcularResistencia()" class="btn-calcular">Calcular</button>
+  </div>
+
+
+  <div *ngIf="resultado" class="resultados-container">
+    <h3>Resultados</h3>
+    <table class="tabla-resultados">
+      <thead>
+        <tr>
+          <th>Color1</th>
+          <th>Color2</th>
+          <th>Multiplicador</th>
+          <th>Tolerancia</th>
+          <th>Valor</th>
+          <th>Valor máximo</th>
+          <th>Valor mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="color-cell">
+              <div class="color-box" [style.background-color]="obtenerColorCSS(banda1, 'banda')"></div>
+              {{resultado.bandas[0]}}
+            </div>
+          </td>
+          <td>
+            <div class="color-cell">
+              <div class="color-box" [style.background-color]="obtenerColorCSS(banda2, 'banda')"></div>
+              {{resultado.bandas[1]}}
+            </div>
+          </td>
+          <td>
+            <div class="color-cell">
+              <div class="color-box" [style.background-color]="obtenerColorCSS(multiplicador, 'multiplicador')"></div>
+              {{resultado.bandas[2]}}
+            </div>
+          </td>
+          <td>
+            <div class="color-cell">
+              <div class="color-box" [style.background-color]="obtenerColorCSS(tolerancia, 'tolerancia')"></div>
+              {{resultado.bandas[3]}}
+            </div>
+          </td>
+          <td>{{mostrarValor(resultado.valor)}}</td>
+          <td>{{mostrarValor(resultado.maximo)}}</td>
+          <td>{{mostrarValor(resultado.minimo)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
